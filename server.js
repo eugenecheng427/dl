@@ -14,15 +14,15 @@ var upload = multer({
 });  //dest: 你的檔案儲存路徑，這裡是設定在根目錄底下的uploads資料夾
 
 // Connect to MongoDB
-var mongo = require('mongodb');
-var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost:27017/Dlive');
-mongoose.connect('mongodb://eugenecheng:eu427724@ds129146.mlab.com:29146/dlivejerseys');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-  console.log("Database Connected.");
-});
+// var mongo = require('mongodb');
+// var mongoose = require('mongoose');
+// // mongoose.connect('mongodb://localhost:27017/Dlive');
+// mongoose.connect('mongodb://eugenecheng:eu427724@ds129146.mlab.com:29146/dlivejerseys');
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function callback () {
+//   console.log("Database Connected.");
+// });
 
 
 
