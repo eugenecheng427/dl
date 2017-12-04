@@ -16,7 +16,8 @@ var upload = multer({
 // Connect to MongoDB
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/Dlive');
+// mongoose.connect('mongodb://localhost:27017/Dlive');
+mongoose.connect('mongodb://<eugenecheng>:<eu427724>@ds129146.mlab.com:29146/dlivejerseys');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
