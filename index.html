@@ -177,7 +177,7 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab1">
-							
+
 									<div class="well">
 										<h3>顏色表</h3>
 										<ul class="nav">
@@ -205,30 +205,31 @@
 										</ul>
 									</div>
 								</div>
-								<div class="tab-pane" id="tab2" >
+								<div class="tab-pane" id="tab2">
 									<div class="well" style="height:600px; overflow-y: scroll; overflow-x:hidden;">
-										<div class="input-append" >
+										<div class="input-append">
 											<input class="span2" id="text-string" type="text" placeholder="請輸入文字或數字" style="width: 80%;height: 100%">
-											<button id="add-text" class="" title="Add text"  style="height: 90%;">
+											<button id="add-text" class="" title="Add text" style="height: 90%;">
 												<i class="icon-share-alt"></i>
 											</button>
 										</div>
 
 										<div id="avatarlist">
-											<input type='file' accept='image/*' onchange='openFile(event)'><br>
+											<input type='file' accept='image/*' onchange='openFile(event)'>
+											<br>
 											<img id='output' style="cursor:pointer;" class="img-polaroid">
 											<script>
-											  var openFile = function(event) {
-											    var input = event.target;
+												var openFile = function (event) {
+													var input = event.target;
 
-											    var reader = new FileReader();
-											    reader.onload = function(){
-											      var dataURL = reader.result;
-											      var output = document.getElementById('output');
-											      output.src = dataURL;
-											    };
-											    reader.readAsDataURL(input.files[0]);
-											  };
+													var reader = new FileReader();
+													reader.onload = function () {
+														var dataURL = reader.result;
+														var output = document.getElementById('output');
+														output.src = dataURL;
+													};
+													reader.readAsDataURL(input.files[0]);
+												};
 											</script>
 										</div>
 										<div id="avatarlist">
@@ -367,8 +368,8 @@
 												var totalInput = $('#zmoney');
 
 												// $('.moneys').delegate('.cassmoney', 'keyup', function () {
-													
-													$('.moneys').delegate('.cassmoney', 'mouseleave', function () {
+
+												$('.moneys').delegate('.cassmoney', 'mouseleave', function () {
 
 													var total = 0;
 
@@ -413,386 +414,388 @@
 											</label>
 										</form>
 										<div style="height:200px; overflow-y: scroll;">
-										<form>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<p style="font-weight:bold; text-align:center">人名</p>
-													<input style="width:100%; text-align:center" placeholder="人名">
+											<form>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<p style="font-weight:bold; text-align:center">人名</p>
+														<input style="width:100%; text-align:center" placeholder="人名" type="text" name='playerName1'>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<p style="font-weight:bold; text-align:center">號碼</p>
+														<input style="width:100%; text-align:center" placeholder="號碼" type="text" name='playerNumber1'>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<p style="font-weight:bold; text-align:center">衣碼</p>
+														<select style="width:100%; height: 100%" name='clothsize1' id ='clothsize1'>
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<p style="font-weight:bold; text-align:center">褲碼</p>
+														<select style="width:100%;" name='paintsize1' id='paintsize1' >
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<p style="font-weight:bold; text-align:center">號碼</p>
-													<input style="width:100%; text-align:center" placeholder="號碼">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名" type="text" name='playerName2'>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼" type="text" name='playerNumber2'>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%" name='clothsize2' id='clothsize2'>
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;" name='paintsize2' id ='paintsize2'>
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<p style="font-weight:bold; text-align:center">衣碼</p>
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<p style="font-weight:bold; text-align:center">褲碼</p>
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
+												<div id="">
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="人名">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<input style="width:100%; text-align:center" placeholder="號碼">
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%; height: 100%">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
+													<div class="moneys" style="float:left; width:25%;">
+														<select style="width:100%;">
+															<option value="clothS">S</option>
+															<option value="clothM">M</option>
+															<option value="clothL">L</option>
+															<option value="clothXL">XL</option>
+														</select>
+													</div>
 												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-											<div id="">
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="人名">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<input style="width:100%; text-align:center" placeholder="號碼">
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%; height: 100%">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-												<div class="moneys" style="float:left; width:25%;">
-													<select style="width:100%;">
-														<option value="clothS">S</option>
-														<option value="clothM">M</option>
-														<option value="clothL">L</option>
-														<option value="clothXL">XL</option>
-													</select>
-												</div>
-											</div>
-										</form>
+											</form>
 										</div>
 								</table>
-								<div class="moneys" >
-											<input id="Lmoney5" name="Lmoney28" type="number" min="0" class="cassmoney" style="width:100%; text-align:center" placeholder="球衣總件數">
-											<input id="Lmoney5" name="Lmoney28" type="number" min="0" class="cassmoney" style="width:100%; text-align:center" placeholder="球褲總件數">
-										</div>
-								<div style="text-align:center;">
+								<!--
+								<div class="moneys">
+									<input id="Lmoney5" name="Lmoney28" type="number" min="0" class="cassmoney" style="width:100%; text-align:center" placeholder="球衣總件數">
+									<input id="Lmoney5" name="Lmoney28" type="number" min="0" class="cassmoney" style="width:100%; text-align:center" placeholder="球褲總件數">
+								</div>
+							-->
+								<!-- <div style="text-align:center;">
 									<output type="text" id="zmoney" name="zmoney" class="zcassmoney" /></output>
-								</div>	
+								</div> -->
 								<br />
 								<button type="button" class="btn btn-large btn-block btn-success" name="addToTheBag" id="addToTheBag" onclick="uploadpng()"
-									 enctype="multipart/form-data" action="/" method='post'>下標
-										<i class="icon-briefcase icon-white"></i>
-								</button>							
+								 enctype="multipart/form-data" action="/" method='post'>下標
+									<i class="icon-briefcase icon-white"></i>
+								</button>
 						</div>
 					</div>
 
@@ -806,98 +809,139 @@
 		<div id="banner">
 			<div class="container">
 				<div class="row">
-					
+
 				</div>
 			</div>
 		</div>
 
-	
-	<!-- Header Ends Here -->
 
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript">
+		<!-- Header Ends Here -->
 
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-35639689-1']);
-		_gaq.push(['_trackPageview']);
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
 
-		(function () {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-35639689-1']);
+			_gaq.push(['_trackPageview']);
 
-	</script>
-	<!-- html2canvas -->
+			(function () {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 
-	<script language="javascript">
-		function chkNum(arg){
-			var numbers = 0 ;
-			if(arg>0){
-				numbers=arg;
-			}
-			return(numbers);
-		}
-		function uploadpng() {
+		</script>
+		<!-- html2canvas -->
 
-			html2canvas($("#shirtDiv"), {
-				onrendered: function (canvas) {
-					// window.alert('=>' + canvas.toDataURL('image/png'));
-					// $.post('/uploadfile', canvas.toDataURL('image/png'));
-					var dataURL = canvas.toDataURL();
-					var username = $('input[name="username"]').val();
-					var phone = $('input[name="phone"]').val();
-					var email = $('input[name="email"]').val();
-					var LmoneyS = chkNum($('input[name="LmoneyS"]').val());
-					var LmoneyM = chkNum($('input[name="LmoneyM"]').val());
-					var LmoneyL = chkNum($('input[name="LmoneyL"]').val());
-					var LmoneyXL = chkNum($('input[name="LmoneyXL"]').val());
-					var Lmoney28 = chkNum($('input[name="Lmoney28"]').val());
-					var Lmoney30 = chkNum($('input[name="Lmoney30"]').val());
-					var Lmoney32 = chkNum($('input[name="Lmoney32"]').val());
-					var Lmoney34 = chkNum($('input[name="Lmoney34"]').val());
-					
-					// if(phone==""){
-					// 	window.alert('=>請輸入電話號碼');
-					if (!phone.match(/^09[0-9]{8}$/)) {
-						alert("手機不可空白!\n長度必須是10，\n不可以是文字，\n必定要09帶頭。")
-					} else {
-						$.ajax({
-							type: "POST",
-							url: "/uploadfile",
-							data: {
-								imgBase64: dataURL,
-								email: email,
-								phone: phone,
-								shirtS: LmoneyS,
-								shirtM: LmoneyM,
-								shirtL: LmoneyL,
-								shirtXL: LmoneyXL,
-								paint28: Lmoney28,
-								paint30: Lmoney30,
-								paint32: Lmoney32,
-								paint34: Lmoney34								
-							}
-						}).done(function (o) {
-							console.log('all_saved');
-							window.alert('uploaded');
-						});
-					}
-
-
-					// $("#auto").attr('href', canvas.toDataURL("image/png"));
-					// $("#auto").attr('download','download.png');
-					// lnk = document.getElementById("auto");
-					// lnk.click();
-					// var myImage = canvas.toDataURL("image/png");
-					// window.alert('=>'+myImage);				
-					// window.open(myImage);
+		<script language="javascript">
+			function chkNum(arg) {
+				var numbers = 0;
+				if (arg > 0) {
+					numbers = arg;
 				}
-			});
+				return (numbers);
+			}
+			function uploadpng() {
+				// window.alert('in');
+				html2canvas($("#shirtDiv"), {
+					onrendered: function (canvas) {
+						// window.alert('into html2canvas');
+						// window.alert('=>' + canvas.toDataURL('image/png'));
+						// $.post('/uploadfile', canvas.toDataURL('image/png'));
+						var dataURL = canvas.toDataURL();
+						var username = $('input[name="username"]').val();
+						var phone = $('input[name="phone"]').val();
+						var email = $('input[name="email"]').val();
+						var LmoneyS = chkNum($('input[name="LmoneyS"]').val());
+						var LmoneyM = chkNum($('input[name="LmoneyM"]').val());
+						var LmoneyL = chkNum($('input[name="LmoneyL"]').val());
+						var LmoneyXL = chkNum($('input[name="LmoneyXL"]').val());
+						var Lmoney28 = chkNum($('input[name="Lmoney28"]').val());
+						var Lmoney30 = chkNum($('input[name="Lmoney30"]').val());
+						var Lmoney32 = chkNum($('input[name="Lmoney32"]').val());
+						var Lmoney34 = chkNum($('input[name="Lmoney34"]').val());
+
+						var orderNumber = phone;
+						var orderName = username;
+						var orderEmail = email;
+						var userphone = phone;
+						// var objorder = {};
+						var orderDetail = [];
+						var detail = {
+							// "playerName": playerName,
+							// "playerNumber":,
+							// shirtSize,
+							// paintSize
+						};
+						for (i = 1; i < 3; i++) {
+							var playerName = 'playerName'+i;
+							var playerNumber = 'playerNumber'+i;
+							var index_clothSize = 'clothsize'+i;
+							var index_paintSize='paintsize1'+i
+							var pName =$('input[name="'+playerName+'"]').val();
+							var pNumber =$('input[name="'+playerNumber+'"]').val();
+							var cSize=$('#'+index_clothSize+' :selected').text();
+							var pSize=$('#'+index_paintSize+' :selected').text();
+							windoe.alert(pName);
+							windoe.alert(pNumber);
+							detail = {
+								"playerName":pName,
+								"playerNumber": pNumber,
+								"shirtSize": cSize,
+								"paintSize": pSize
+							}
+							orderDetail.push(detail);
+						}
 
 
-		}
+						// if(phone==""){
+						// 	window.alert('=>請輸入電話號碼');
+						if (!phone.match(/^09[0-9]{8}$/)) {
+							alert("手機不可空白!\n長度必須是10，\n不可以是文字，\n必定要09帶頭。")
+						} else {
+							window.alert('posting');
+							$.ajax({
+								type: "POST",
+								url: "/uploadfile",
+								data: {
+									imgBase64: dataURL,
+									email: email,
+									phone: phone,
+									orderNumber: orderNumber,
+									ordername: orderName,
+									orderEmail: orderEmail,
+									userphone: userphone,
+									orderDetail: orderDetail
+
+									// shirtS: LmoneyS,
+									// shirtM: LmoneyM,
+									// shirtL: LmoneyL,
+									// shirtXL: LmoneyXL,
+									// paint28: Lmoney28,
+									// paint30: Lmoney30,
+									// paint32: Lmoney32,
+									// paint34: Lmoney34
+								}
+							}).done(function (o) {
+								console.log('all_saved');
+								window.alert('uploaded');
+							});
+						}
+
+
+						// $("#auto").attr('href', canvas.toDataURL("image/png"));
+						// $("#auto").attr('download','download.png');
+						// lnk = document.getElementById("auto");
+						// lnk.click();
+						// var myImage = canvas.toDataURL("image/png");
+						// window.alert('=>'+myImage);				
+						// window.open(myImage);
+					}
+				});
+
+
+			}
 		// $(".addToTheBag").on("click", function() {
 
 		// 	html2canvas($("#shirtDiv"), {
@@ -908,10 +952,10 @@
 		// 		}
 		// 	});
 		// });
-	</script>
-	<!-- Featured Ends Here -->
+		</script>
+		<!-- Featured Ends Here -->
 
-	<!--
+		<!--
 
 	<div id="page">
 		<div class="container"> </div>
@@ -922,7 +966,7 @@
 
 	-->
 
-	<!-- Copyright -->
+		<!-- Copyright -->
 
 </body>
 
