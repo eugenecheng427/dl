@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>D-Live訂單顯示頁</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/4-col-portfolio.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+    <script>
+       function Submit(obj) {
+            var file = '../uploads/0918111222.jpg';
+            window.alert('file = '+file);
+            // $("#img").attr('src', file);
+            // window.alert('bbbbbbb');
+            $.ajax({
+                type: "POST",
+                url: "/showorder"
+            }).done(function (data) {
+                // console.log('all_saved');
+                // var divMain = document.getElementById("divMain");
+                // window.alert('data = ' + data);
+                // window.alert('data = ' + JSON.parse(data));
+                var orders = data;
+                var orderJson = JSON.stringify(orders);
+                // window.alert('orders ='+orders);
+                // window.alert('orders.length = ' + orders.length);
+                // window.alert('os ='+orderJson);
+                // window.alert('os.length = ' + orderJson.length);
+
+                for (i = 0; i < orders.length; i++) {
+                    window.alert('ccccc');
+                    window.alert('orders['+i+'].onumer = '+orders[i].onumer);
+                    var orderNum = orders[i].onumer;
+                    var orderObj = orders[i].oobj;
+                    var orderName = orderObj.orderName;
+                    var orderPhone = orderObj.userphone;
+                    var orderEmail = orderObj.orderEmail;
+                    var imageFile = orderObj.imageFile;
+                    var orderDetailObj = orderObj.orderDetail;
+                    window.alert('orderNum['+i+'] = '+orderNum);
+                    var orderoutput = document.createElement("output");
+                    orderoutput.type="text";
+                    orderoutput.value="訂單編號: "+ordername;
+                    obj.form.appendChild(orderoutput);
+                    var s = document.createElement("br");
+                    obj.form.appendChild(s);
+                    // var hh =document.createElement("h4");
+                    // divMain.innerHTML = "<h4 class='card-title' value='訂單編號' id='nonum"+i+"'/>";
+                    // var onum = document.getElementById("nonum"+i);
+                    // onum.innerHTML="<output class='ordernumber'  value ='"+orderNum+"'>";
+                            // divMain.appendChild()
+                    
+                    for (j = 0; j < orderDetailObj.length; j++) {
+                        var pName = orderDetailObj[j].playerName;
+                        var PNum = orderDetailObj[j].playerNumber;
+                        var stSize = orderDetailObj[j].shirtSize;
+                        var ptSize = orderDetailObj[j].paintSize;
+                    }
+                }
+
+                
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <form id="sentToServer">
+        <!-- <input type="text" name="data" /> -->
+        <input type="button" value="Showorder" onClick="Submit(this)" />
+    </form>
+    <div class="container" id="divMain">
+
+
+    </div>
+</body>
+
+</html>
