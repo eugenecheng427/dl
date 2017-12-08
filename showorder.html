@@ -18,6 +18,7 @@
 
     <script>
         function Submit(obj) {
+            $("#divRow ").html("");
             var file = '../uploads/0918111222.jpg';
             // window.alert('file = '+file);
             // $("#img").attr('src', file);
@@ -64,22 +65,47 @@
                                 $("<output>").attr("type", "text")
                                     .attr("value", "訂單編號：" + orderNum)
                             ),
-                            $("<br>"),
+                            // $("<br>"),
                             $("<p>").html(
                                 $("<output>").attr("type", "text")
                                     .attr("value", "訂購人姓名：" + orderName)
                             ),
-                            $("<br>"),
+                            // $("<br>"),
                             $("<p>").html(
                                 $("<output>").attr("type", "text")
                                     .attr("value", "訂購人電話：" + orderPhone)
                             ),
-                            $("<br>"),
+                            // $("<br>"),
                             $("<p>").html(
                                 $("<output>").attr("type", "text")
                                     .attr("value", "訂購人電郵：" + orderEmail)
                             ),
-                            $("<br>")
+                            // $("<br>"),
+                            $("<table>")
+                                .attr("id","table"+orderNum)
+                                .attr("border","1")
+                                .attr("style","text-align: center;")
+                                .append(
+                                $("<tr>").append(
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", "人名")
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", "號碼")
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", "衣碼")
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", "褲碼")
+                                    )
+                                )
+                            )
+
                         )
 
                     );
@@ -102,7 +128,7 @@
                     // // var onum = document.getElementById("nonum"+i);
                     // // onum.innerHTML="<output class='ordernumber'  value ='"+orderNum+"'>";
                     // document.getElementById(divMain).appendChild(textnode);
-                    // window.alert('xxxxxxxxxx');
+                    // window.alert('orderDetailObj = '+orderDetailObj);
 
 
                     for (j = 0; j < orderDetailObj.length; j++) {
@@ -110,6 +136,27 @@
                         var PNum = orderDetailObj[j].playerNumber;
                         var stSize = orderDetailObj[j].shirtSize;
                         var ptSize = orderDetailObj[j].paintSize;
+                        // window.alert(pName+'|'+PNum+'|'+stSize+'|'+ptSize);
+                        $("#table"+orderNum).append(
+                                $("<tr>").append(
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", pName)
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", PNum)
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", stSize)
+                                    ),
+                                    $("<td>").html(
+                                            $("<output>").attr("type", "text")
+                                    .attr("value", ptSize)
+                                    )
+                                )
+                        );
                     }
                 }
 

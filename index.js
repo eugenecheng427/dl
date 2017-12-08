@@ -115,7 +115,7 @@ app.post('/orderpage', function (req, res, next) {
     // });
 });
 app.get('/showorder', function (req, res) {
-    // console.log('orderpage');
+        // console.log('orderpage');
 
 
     res.sendFile(__dirname + '/showorder.html', function (err) {
@@ -181,8 +181,8 @@ app.post('/uploadfile', function (req, res) {
     var orderName = username;
     var orderEmail = email;
     var userphone = phone;
-    // var imageFile = __dirname + '\\uploads' + '\\' + phone + '.jpg';
-    var imageFile = '\\uploads' + '\\' + phone + '.jpg';
+    var imageFile = __dirname + '\\uploads' + '\\' + phone + '.jpg';
+    // var imageFile = '/uploads' + '/' + phone + '.jpg';
     var orderobj = {};
     var orderDetail = [];
     var onumber = orderNumber;
@@ -217,7 +217,7 @@ app.post('/uploadfile', function (req, res) {
     var dataPath = __dirname + '/data/order.json';
 
 
-    fs.writeFile('\\uploads' + '\\' + phone + '.jpg', buffer, function (err) {
+    fs.writeFile(__dirname+'\\uploads' + '\\' + phone + '.jpg', buffer, function (err) {
         // console.log('[S,M,L,XL,28,30,32,34] ' + '\n' + '[' + shirtS + ',' + shirtM + ',' + shirtL + ',' + shirtXL + ',' + paint28 + ',' + paint30 + ',' + paint32 + ',' + paint34 + ']');
         // res.send('success');
         //資料存資料庫
