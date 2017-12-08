@@ -17,9 +17,9 @@
 
 
     <script>
-       function Submit(obj) {
+        function Submit(obj) {
             var file = '../uploads/0918111222.jpg';
-            window.alert('file = '+file);
+            // window.alert('file = '+file);
             // $("#img").attr('src', file);
             // window.alert('bbbbbbb');
             $.ajax({
@@ -31,35 +31,80 @@
                 // window.alert('data = ' + data);
                 // window.alert('data = ' + JSON.parse(data));
                 var orders = data;
-                var orderJson = JSON.stringify(orders);
+
                 // window.alert('orders ='+orders);
                 // window.alert('orders.length = ' + orders.length);
                 // window.alert('os ='+orderJson);
                 // window.alert('os.length = ' + orderJson.length);
 
                 for (i = 0; i < orders.length; i++) {
-                    window.alert('ccccc');
-                    window.alert('orders['+i+'].onumer = '+orders[i].onumer);
-                    var orderNum = orders[i].onumer;
+                    // window.alert('orders['+i+']='+orders[i]);
+                    // window.alert('JSONorders['+i+']'+JSON.stringify(orders[i]));
+                    // window.alert('singleOrder='+singleOrder);
+                    var orderNum = orders[i].onumber;
                     var orderObj = orders[i].oobj;
                     var orderName = orderObj.orderName;
                     var orderPhone = orderObj.userphone;
                     var orderEmail = orderObj.orderEmail;
-                    var imageFile = orderObj.imageFile;
+                    // var imageFile = orderObj.imageFile;
+                    var imageFile = '../uploads/'+orderNum+'.jpg';
                     var orderDetailObj = orderObj.orderDetail;
-                    window.alert('orderNum['+i+'] = '+orderNum);
-                    var orderoutput = document.createElement("output");
-                    orderoutput.type="text";
-                    orderoutput.value="訂單編號: "+ordername;
-                    obj.form.appendChild(orderoutput);
-                    var s = document.createElement("br");
-                    obj.form.appendChild(s);
-                    // var hh =document.createElement("h4");
-                    // divMain.innerHTML = "<h4 class='card-title' value='訂單編號' id='nonum"+i+"'/>";
-                    // var onum = document.getElementById("nonum"+i);
-                    // onum.innerHTML="<output class='ordernumber'  value ='"+orderNum+"'>";
-                            // divMain.appendChild()
-                    
+                    // window.alert('orderNum['+i+'] = '+orderNum);
+                    // window.alert('orderName['+i+'] = '+orderName);
+                    // window.alert('orderPhone['+i+'] = '+orderPhone);
+                    // window.alert('orderEmail['+i+'] = '+orderEmail);
+                    // window.alert('imageFile['+i+'] = '+imageFile);
+                    // window.alert('imageFile'+imageFile);
+                    $("#divRow ").append(
+                        $("<div>").append(
+                            $("<a>").html(
+                            $("<img>").attr("src",imageFile).attr("alt",imageFile)
+                            ),
+                            $("<h4>").html(
+                                $("<output>").attr("type", "text")
+                                    .attr("value", "訂單編號：" + orderNum)
+                            ),
+                            $("<br>"),
+                            $("<p>").html(
+                                $("<output>").attr("type", "text")
+                                    .attr("value", "訂購人姓名：" + orderName)
+                            ),
+                            $("<br>"),
+                            $("<p>").html(
+                                $("<output>").attr("type", "text")
+                                    .attr("value", "訂購人電話：" + orderPhone)
+                            ),
+                            $("<br>"),
+                            $("<p>").html(
+                                $("<output>").attr("type", "text")
+                                    .attr("value", "訂購人電郵：" + orderEmail)
+                            ),
+                            $("<br>")
+                        )
+
+                    );
+                    // var x = document.createElement("Div"); // Create a <p> node
+                    // var t = document.createTextNode("訂單編號:zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx " + orderName);    // Create a text node
+                    // x.appendChild(t);                                           // Append the text to <p>
+                    // document.body.appendChild(x);                               // Append <p> to <body>
+                    // window.alert('zzzzzzzzzzzz');
+
+                    // var orderoutput = document.createElement("output");
+                    // orderoutput.type="text";
+                    // orderoutput.value="訂單編號: "+ordername;
+                    // obj.form.appendChild(orderoutput);
+                    // var s = document.createElement("br");
+                    // obj.form.appendChild(s);
+                    // window.alert('orderNum[' + i + '] = ' + orderNum);
+                    // // var hh =document.createElement("h4");
+                    // var textnode = document.createTextNode("Water");
+                    // // divMain.innerHTML = "<h4 class='card-title' value='訂單編號' id='nonum"+i+"'/>";
+                    // // var onum = document.getElementById("nonum"+i);
+                    // // onum.innerHTML="<output class='ordernumber'  value ='"+orderNum+"'>";
+                    // document.getElementById(divMain).appendChild(textnode);
+                    // window.alert('xxxxxxxxxx');
+
+
                     for (j = 0; j < orderDetailObj.length; j++) {
                         var pName = orderDetailObj[j].playerName;
                         var PNum = orderDetailObj[j].playerNumber;
@@ -68,7 +113,8 @@
                     }
                 }
 
-                
+
+
             });
         }
     </script>
@@ -81,7 +127,8 @@
         <input type="button" value="Showorder" onClick="Submit(this)" />
     </form>
     <div class="container" id="divMain">
-
+        <div class="row" id="divRow">
+        </div>
 
     </div>
 </body>
